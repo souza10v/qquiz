@@ -12,13 +12,33 @@ struct HomeView: View {
     @EnvironmentObject var model: ContentModel
     
     var body: some View {
-        ScrollView{
-            NavigationView {
-                ForEach(0..<model.modules.count) { info in
-                    VStack{
-                        Text(String(info))
+        
+        NavigationView {
+            
+            ScrollView{
+                
+                LazyVStack {
+                    
+                    //Card Quiz
+                    ForEach(model.modules) { info in
+                        
+                        VStack (spacing: 20){
+                            
+                            NavigationLink {
+                                
+                                QuizView(questions: info.test.questions)
+                                
+                            } label: {
+                                
+                                HomeViewIcon(image: info.test.image, title: "Learn \(info.category) Test", description: info.test.description, count: "\(info.test.questions.count) Lessons", time: info.test.time)
+                                
+                            }
+                        }
+                        .padding(.bottom, 10)
                     }
                 }
+                .accentColor(.black)
+                .padding()
             }
         }
     }

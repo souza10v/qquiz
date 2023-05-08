@@ -20,7 +20,7 @@ class ContentModel: ObservableObject{
     func getLocalData() {
         
         // Get a url to the json file
-        let jsonUrl = Bundle.main.url(forResource: "data2tests", withExtension: "json")
+        let jsonUrl = Bundle.main.url(forResource: "tests1", withExtension: "json")
         
         do {
             // Read the file into a data object
