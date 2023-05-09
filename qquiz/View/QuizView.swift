@@ -14,6 +14,8 @@ struct QuizView: View {
     @State var currentIndex = 0
     @State var currentAnswer = 0
     @State var submitted = false
+    @State var numCorrect = 0
+    
     var questions: [Question]
     
     var body: some View {
@@ -27,10 +29,11 @@ struct QuizView: View {
             
             // Question
             Text(questions[currentIndex].content)
+                .padding(.horizontal, 20)
             
             // Answers
             
-            ScrollView{
+            ScrollView {
                 
                 VStack{
                     
@@ -86,9 +89,10 @@ struct QuizView: View {
                 .padding()
             }
             
+            //Botao next
             Button {
                 
-                if submitted == true && currentIndex < maxIndex-1 {
+                if submitted == true && currentIndex < maxIndex-1 { //next
                     
                     currentIndex += 1
                     submitted = false
@@ -103,17 +107,54 @@ struct QuizView: View {
                 }
                 else {
                     
-                    submitted = true
-                    print("false")
+                    if selectedAnswerIndex != nil {
+                        submitted = true
+                        
+                        if questions[currentIndex].correctIndex == selectedAnswerIndex {
+                            numCorrect += 1
+                        }
+                    }
+                    
+                    
+                    print("submit")
                     //incrementa pontos
-                    
-                    
                 }
                 
             } label: {
-                Text("Next")
-            }
+                
+                ZStack {
+                    
+                    RectangleCard(color: Color.white)
+                        .frame(height: 48)
+                    
+                    if buttonText == "View result" { //Criar arquivo de constantes para viewresult
+                        
+                        NavigationLink {
+                            TestResultView(numCorrect: numCorrect, totalQuestion: maxIndex)
+                        } label: {
+                            Text(buttonText)
+                        }
 
+                    } else {
+                        Text(buttonText)
+                    }
+                }
+            }
+            .padding()
+            .accentColor(.black)
+        }
+    }
+    
+    var buttonText: String {
+        
+        if submitted == true {
+            if currentIndex == ((questions.count)-1) {
+                return "View result"
+            } else {
+                return "Submit"
+            }
+        } else {
+            return "Next"
         }
     }
 }

@@ -17,6 +17,7 @@
 		C8AB83442A092B9200E80EEC /* HomeViewIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB83432A092B9200E80EEC /* HomeViewIcon.swift */; };
 		C8AB83462A0934CB00E80EEC /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB83452A0934CB00E80EEC /* QuizView.swift */; };
 		C8AB83482A094F1300E80EEC /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB83472A094F1300E80EEC /* RectangleCard.swift */; };
+		C8AB834A2A09A3B800E80EEC /* TestResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB83492A09A3B800E80EEC /* TestResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		C8AB83432A092B9200E80EEC /* HomeViewIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewIcon.swift; sourceTree = "<group>"; };
 		C8AB83452A0934CB00E80EEC /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		C8AB83472A094F1300E80EEC /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
+		C8AB83492A09A3B800E80EEC /* TestResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				C8AB83262A07D99A00E80EEC /* HomeView.swift */,
 				C8AB83432A092B9200E80EEC /* HomeViewIcon.swift */,
 				C8AB83452A0934CB00E80EEC /* QuizView.swift */,
+				C8AB83492A09A3B800E80EEC /* TestResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8AB83272A07D99A00E80EEC /* HomeView.swift in Sources */,
+				C8AB834A2A09A3B800E80EEC /* TestResultView.swift in Sources */,
 				C8AB83442A092B9200E80EEC /* HomeViewIcon.swift in Sources */,
 				C8AB83252A07D99A00E80EEC /* qquizApp.swift in Sources */,
 				C8AB833A2A08805A00E80EEC /* ContentModel.swift in Sources */,
