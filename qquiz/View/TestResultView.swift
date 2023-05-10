@@ -10,7 +10,7 @@ import SwiftUI
 struct TestResultView: View {
     
     @EnvironmentObject var model: ContentModel
-    
+
     var numCorrect: Int
     var totalQuestion: Int
     
@@ -46,8 +46,10 @@ struct TestResultView: View {
             
             Button  {
                 
-                print("End quiz")
-                
+                print("going to main before \(model.path)")
+                model.reset()
+                print("going to main before \(model.path)")
+                    
             } label: {
                 
                 ZStack {
@@ -70,5 +72,6 @@ struct TestResultView: View {
 struct TestResultView_Previews: PreviewProvider {
     static var previews: some View {
         TestResultView(numCorrect: 5, totalQuestion: 10)
+            .environmentObject(ContentModel())
     }
 }

@@ -6,15 +6,23 @@
 //
 
 import Foundation
+import SwiftUI
 
 
 class ContentModel: ObservableObject{
     
     @Published var modules = [Module]()
+    @Published var path = NavigationPath()
     
     init() {
         
         getLocalData()
+    }
+    
+    func reset() {
+        
+        path = NavigationPath()
+        
     }
     
     func getLocalData() {

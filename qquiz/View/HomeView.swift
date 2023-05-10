@@ -13,11 +13,11 @@ struct HomeView: View {
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack(path: $model.path) {
             
             ScrollView{
                 
-                LazyVStack {
+                VStack {
                     
                     //Card Quiz
                     ForEach(model.modules) { info in
@@ -47,5 +47,6 @@ struct HomeView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(ContentModel())
     }
 }
