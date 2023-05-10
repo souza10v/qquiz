@@ -15,6 +15,7 @@ struct QuizView: View {
     @State var currentAnswer = 0
     @State var submitted = false
     @State var numCorrect = 0
+    @Binding var isActive: Bool
     
     var questions: [Question]
     
@@ -130,7 +131,7 @@ struct QuizView: View {
                     if buttonText == "View result" { //Criar arquivo de constantes para viewresult
                         
                         NavigationLink {
-                            TestResultView(numCorrect: numCorrect, totalQuestion: maxIndex)
+                            TestResultView(isActive: $isActive, numCorrect: numCorrect, totalQuestion: maxIndex)
                         } label: {
                             Text(buttonText)
                         }
@@ -160,8 +161,11 @@ struct QuizView: View {
 }
 
 struct QuizView_Previews: PreviewProvider {
+    
+    @State static var isActivePop = false
+    
     static var previews: some View {
-        QuizView(questions: [
+        QuizView(isActive: $isActivePop, questions: [
             Question(id: 1, content: "pergunta numero 1", correctIndex: 2, answers: ["aa1","aa2","aa3","aa4"]),
             Question(id: 2, content: "22", correctIndex: 2, answers: ["bb","bb","bb"])]
         )

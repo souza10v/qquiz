@@ -10,6 +10,7 @@ import SwiftUI
 struct TestResultView: View {
     
     @EnvironmentObject var model: ContentModel
+    @Binding var isActive: Bool
 
     var numCorrect: Int
     var totalQuestion: Int
@@ -46,9 +47,8 @@ struct TestResultView: View {
             
             Button  {
                 
-                print("going to main before \(model.path)")
-                model.reset()
-                print("going to main before \(model.path)")
+                isActive = false
+                print("going to main ")
                     
             } label: {
                 
@@ -70,8 +70,11 @@ struct TestResultView: View {
 }
 
 struct TestResultView_Previews: PreviewProvider {
+    
+    @State static var isActivePop = true
+    
     static var previews: some View {
-        TestResultView(numCorrect: 5, totalQuestion: 10)
+        TestResultView(isActive: $isActivePop, numCorrect: 5, totalQuestion: 10)
             .environmentObject(ContentModel())
     }
 }

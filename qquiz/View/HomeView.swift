@@ -10,10 +10,11 @@ import SwiftUI
 struct HomeView: View {
     
     @EnvironmentObject var model: ContentModel
+    @State private var isRootActive = false
     
     var body: some View {
         
-        NavigationStack(path: $model.path) {
+        NavigationView {
             
             ScrollView{
                 
@@ -24,9 +25,10 @@ struct HomeView: View {
                         
                         VStack (spacing: 20){
                             
-                            NavigationLink {
+                            
+                            NavigationLink(isActive: $isRootActive) {
                                 
-                                QuizView(questions: info.test.questions)
+                                QuizView(isActive: $isRootActive, questions: info.test.questions)
                                 
                             } label: {
                                 

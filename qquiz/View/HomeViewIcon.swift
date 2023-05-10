@@ -14,6 +14,7 @@ struct HomeViewIcon: View {
     var description: String
     var count: String
     var time: String
+ 
     
     var body: some View {
         
@@ -74,6 +75,8 @@ struct HomeViewIcon: View {
 }
 
 struct HomeViewIcon_Previews: PreviewProvider {
+    
+    
     static var previews: some View {
         HomeViewIcon(image: "testSwift", title: "History Quiz", description: "Some description here", count: "12 lessons", time: "2 hours")
     }
