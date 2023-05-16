@@ -41,8 +41,10 @@ struct HomeView: View {
                 }
                 .accentColor(.black)
                 .padding()
+                .navigationTitle("qquiz")
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 
