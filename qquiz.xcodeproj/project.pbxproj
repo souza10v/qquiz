@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C837CABE2A142B77002F066B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C837CABD2A142B77002F066B /* ProfileView.swift */; };
 		C8AB83252A07D99A00E80EEC /* qquizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AB83242A07D99A00E80EEC /* qquizApp.swift */; };
 		C8AB83292A07D99D00E80EEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8AB83282A07D99D00E80EEC /* Assets.xcassets */; };
 		C8AB832C2A07D99D00E80EEC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8AB832B2A07D99D00E80EEC /* Preview Assets.xcassets */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		C81B23852A0DA220009F20BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C837CABD2A142B77002F066B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C8AB83212A07D99A00E80EEC /* qquiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qquiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8AB83242A07D99A00E80EEC /* qquizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qquizApp.swift; sourceTree = "<group>"; };
 		C8AB83282A07D99D00E80EEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				C8AB834D2A0ADCE600E80EEC /* HomeView.swift */,
 				C8AB83432A092B9200E80EEC /* HomeViewIcon.swift */,
+				C837CABD2A142B77002F066B /* ProfileView.swift */,
 				C8AB83452A0934CB00E80EEC /* QuizView.swift */,
 				C8AB83492A09A3B800E80EEC /* TestResultView.swift */,
 			);
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8AB834A2A09A3B800E80EEC /* TestResultView.swift in Sources */,
+				C837CABE2A142B77002F066B /* ProfileView.swift in Sources */,
 				C8AB83442A092B9200E80EEC /* HomeViewIcon.swift in Sources */,
 				C8AB83252A07D99A00E80EEC /* qquizApp.swift in Sources */,
 				C8AB833A2A08805A00E80EEC /* ContentModel.swift in Sources */,

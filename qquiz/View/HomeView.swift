@@ -14,37 +14,47 @@ struct HomeView: View {
     
     var body: some View {
         
-        NavigationView {
+        NavigationView{
             
-            ScrollView{
+            VStack(alignment: .leading){
                 
-                VStack {
+                ScrollView{
                     
-                    //Card Quiz
-                    ForEach(model.modules) { info in
+                    LazyVStack(alignment: .leading){
                         
-                        VStack (spacing: 20){
+                        // Profile and Points View
+                        ProfileView()
+                        
+                        // Header Text
+                        Text("Let`s Play")
+                            .bold()
+                            .padding(.top, 10)
+                            .font(.system(size: 18))
+                        
+                        // Card Quiz
+                        ForEach(model.modules) { info in
                             
-                            
-                            NavigationLink(isActive: $isRootActive) {
+                            VStack (spacing: 20){
                                 
-                                QuizView(isActive: $isRootActive, questions: info.test.questions)
-                                
-                            } label: {
-                                
-                                HomeViewIcon(image: info.test.image, title: "Learn \(info.category) Test", description: info.test.description, count: "\(info.test.questions.count) Lessons", time: info.test.time)
-                                
+                                NavigationLink(isActive: $isRootActive) {
+                                    
+                                    QuizView(isActive: $isRootActive, questions: info.test.questions)
+                                    
+                                } label: {
+                                    
+                                    HomeViewIcon(image: info.test.image, title: "Learn \(info.category) Test", description: info.test.description, count: "\(info.test.questions.count) Lessons", time: info.test.time)
+                                    
+                                }
                             }
+                            .padding(.bottom, 10)
                         }
-                        .padding(.bottom, 10)
                     }
+                    .accentColor(.black)
+                    .padding()
                 }
-                .accentColor(.black)
-                .padding()
-                .navigationTitle("qquiz")
             }
+            .navigationViewStyle(.stack)
         }
-        .navigationViewStyle(.stack)
     }
 }
 

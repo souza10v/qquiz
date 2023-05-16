@@ -13,6 +13,7 @@ class ContentModel: ObservableObject{
     
     @Published var modules = [Module]()
     @Published var path = NavigationPath()
+    @Published var userName = "User"
     
     init() {
         

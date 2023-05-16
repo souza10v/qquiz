@@ -22,7 +22,7 @@ struct HomeViewIcon: View {
             Rectangle()
                 .foregroundColor(.white)
                 .cornerRadius(10)
-                .shadow(radius: 5)
+                .shadow(color: Color.gray.opacity(0.3), radius: 5, x: 0, y: 2)
                 .aspectRatio(CGSize(width: 335, height: 175),
                              contentMode: .fit)
   
