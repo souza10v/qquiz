@@ -54,7 +54,7 @@ struct TestResultView: View {
                 
                 ZStack {
                     
-                    RectangleCard(color: .green)
+                    RectangleCard(color: Color(red: 62/255, green: 184/255, blue: 212/255))
                         .frame(height: 48)
                     
                     Text("Complete")

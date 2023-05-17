@@ -14,6 +14,7 @@ struct QuizView: View {
     @State var currentIndex = 0
     @State var currentAnswer = 0
     @State var submitted = false
+    @State var progressionView = 0
     @State var numCorrect = 0
     @Binding var isActive: Bool
     
@@ -23,17 +24,27 @@ struct QuizView: View {
         
         let maxIndex = questions.count
         
-        VStack(spacing: 20){
+        VStack(spacing: 10){
             
-            // Question number
-            Text("Question \(currentIndex + 1) of \(maxIndex)")
+            VStack{
+                // Question number
+                //Text("Question \(currentIndex + 1) of \(maxIndex)")
+                
+                // Progress View
+                ProgressionView(progressionView: Double(progressionView), maxIndex: Double(maxIndex))
+                
+            }
+            .padding()
             
             // Question
-            Text(questions[currentIndex].content)
-                .padding(.horizontal, 20)
+            //Text(questions[currentIndex].content)
+            //    .padding(.horizontal, 20)
+            QuestionView(question: questions[currentIndex].content)
+                .padding(.top, -20)
+                .padding()
+                
             
             // Answers
-            
             ScrollView {
                 
                 VStack{
@@ -58,7 +69,8 @@ struct QuizView: View {
                                 
                                 else if index ==  questions[currentIndex].correctIndex && index == selectedAnswerIndex {
                                     
-                                        RectangleCard(color: Color.green)
+                                    
+                                        RectangleCard(color: Color(red: 0/255, green: 168/255, blue: 139/255))
                                             .frame(height: 48)
                                     
                                 }
@@ -69,7 +81,7 @@ struct QuizView: View {
                                     
                                 } else if index ==  questions[currentIndex].correctIndex {
                                     
-                                    RectangleCard(color: Color.green)
+                                    RectangleCard(color: Color(red: 0/255, green: 168/255, blue: 139/255))
                                         .frame(height: 48)
                                     
                                 } else {
@@ -80,6 +92,7 @@ struct QuizView: View {
                                 
                                 Text(answers)
                                     .bold()
+                                    .foregroundColor(.gray)
                                 
                             }
                         }
@@ -98,11 +111,13 @@ struct QuizView: View {
                     currentIndex += 1
                     submitted = false
                     selectedAnswerIndex = nil
+                    
                     print("up")
                     
                 } else if submitted == true && currentIndex == maxIndex-1 {
                     
                     currentIndex = 0
+                    progressionView = 0
                     print("reset")
                     
                 }
@@ -110,6 +125,7 @@ struct QuizView: View {
                     
                     if selectedAnswerIndex != nil {
                         submitted = true
+                        progressionView += 1
                         
                         if questions[currentIndex].correctIndex == selectedAnswerIndex {
                             numCorrect += 1
@@ -125,7 +141,7 @@ struct QuizView: View {
                 
                 ZStack {
                     
-                    RectangleCard(color: Color.white)
+                    RectangleCard(color: Color(red: 62/255, green: 184/255, blue: 212/255))
                         .frame(height: 48)
                     
                     if buttonText == "View result" { //Criar arquivo de constantes para viewresult
@@ -134,10 +150,14 @@ struct QuizView: View {
                             TestResultView(isActive: $isActive, numCorrect: numCorrect, totalQuestion: maxIndex)
                         } label: {
                             Text(buttonText)
+                                .foregroundColor(.white)
+                                .bold()
                         }
 
                     } else {
                         Text(buttonText)
+                            .foregroundColor(.white)
+                            .bold()
                     }
                 }
             }
