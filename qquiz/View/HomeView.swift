@@ -26,7 +26,7 @@ struct HomeView: View {
                         ProfileView()
                         
                         // Header Text
-                        Text("Let`s Play")
+                        Text("Check out your quizz!")
                             .bold()
                             .padding(.top, 10)
                             .font(.system(size: 18))

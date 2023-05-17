@@ -24,7 +24,7 @@ struct ProfileView: View {
                         .font(.title)
                         .bold()
                     
-                    Text("Let`s make this day productive")
+                    Text("Let`s make qquiz")
                 }
                 
                 Spacer()
