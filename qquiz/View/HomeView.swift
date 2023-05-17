@@ -12,6 +12,9 @@ struct HomeView: View {
     @EnvironmentObject var model: ContentModel
     @State private var isRootActive = false
     
+    private var adaptiveColumns = [
+        GridItem(.adaptive(minimum: 155))]
+    
     var body: some View {
         
         NavigationView{
@@ -20,7 +23,7 @@ struct HomeView: View {
                 
                 ScrollView{
                     
-                    LazyVStack(alignment: .leading){
+                    LazyVStack{
                         
                         // Profile and Points View
                         ProfileView()
@@ -28,25 +31,33 @@ struct HomeView: View {
                         // Header Text
                         Text("Check out your quizz!")
                             .bold()
-                            .padding(.top, 10)
+                            .padding(15)
                             .font(.system(size: 18))
                         
-                        // Card Quiz
-                        ForEach(model.modules) { info in
-                            
-                            VStack (spacing: 20){
+                        LazyVGrid(columns: adaptiveColumns) {
+                            // Card Quiz
+                            ForEach(model.modules) { info in
                                 
-                                NavigationLink(isActive: $isRootActive) {
+                                VStack (spacing: 20){
                                     
-                                    QuizView(isActive: $isRootActive, questions: info.test.questions)
-                                    
-                                } label: {
-                                    
-                                    HomeViewIcon(image: info.test.image, title: "Learn \(info.category) Test", description: info.test.description, count: "\(info.test.questions.count) Lessons", time: info.test.time)
-                                    
+                                    NavigationLink(isActive: $isRootActive) {
+                                        
+                                        QuizView(isActive: $isRootActive, questions: info.test.questions)
+                                        
+                                    } label: {
+                                        
+                                        //View tyope 01
+                                        
+                                        //  HomeViewIcon(image: info.test.image, title: "Learn \(info.category) Test", description: info.test.description, count: "\(info.test.questions.count) Lessons", time: info.test.time)
+                                        
+                                        //View tyope 02
+                                        
+                                        HomeSmallIcon(image: info.test.image, title: "\(info.category)", description: info.test.description, count: "\(info.test.questions.count) questions", time: info.test.time)
+                                        
+                                    }
                                 }
+                                .padding(.bottom, 10)
                             }
-                            .padding(.bottom, 10)
                         }
                     }
                     .accentColor(.black)

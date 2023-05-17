@@ -87,7 +87,7 @@
         "category": "History",
         "test": {
             "id": 0,
-            "image": "testSwift",
+            "image": "history",
             "time": "60 minutes",
             "description": "Test your knowledge of History.",
             "questions": [

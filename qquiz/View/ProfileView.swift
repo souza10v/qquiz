@@ -25,6 +25,7 @@ struct ProfileView: View {
                         .bold()
                     
                     Text("Let`s make qquiz")
+                        .foregroundColor(.gray)
                 }
                 
                 Spacer()
