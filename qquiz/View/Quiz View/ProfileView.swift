@@ -38,6 +38,7 @@ struct ProfileView: View {
                             .frame(width: 70, height: 70)
                         
                         Image("profileIcon")
+                            .padding()
                     }
                 }
             }
