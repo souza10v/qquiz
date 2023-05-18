@@ -33,3 +33,10 @@ struct Question: Decodable, Identifiable {
     var answers: [String]
     
 }
+
+class TestData: Decodable, Encodable, Identifiable {
+    
+    var id: Int
+    var status: String
+    
+}

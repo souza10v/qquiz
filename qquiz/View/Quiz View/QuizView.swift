@@ -164,6 +164,7 @@ struct QuizView: View {
             .padding()
             .accentColor(.black)
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     var buttonText: String {

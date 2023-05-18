@@ -53,7 +53,7 @@ struct TestResultView: View {
             
             VStack(spacing: 25){
                 
-                Text("You got \(numCorrect) out \(totalQuestion) questions")
+                Text("You got \(numCorrect) out \(totalQuestion) questions!")
                     .font(.title2)
                 
                 HStack {
@@ -93,6 +93,7 @@ struct TestResultView: View {
             Spacer()
         }
         .padding()
+        .navigationBarBackButtonHidden(true)
     }
 }
 

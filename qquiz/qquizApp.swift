@@ -11,7 +11,8 @@ import SwiftUI
 struct qquizApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            //HomeView()
+            jsonteste()
                 .environmentObject(ContentModel())
         }
     }
