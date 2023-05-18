@@ -10,6 +10,7 @@ import SwiftUI
 struct QuestionView: View {
     
     var question: String
+    @Binding var isActive: Bool
     
     var body: some View {
         
@@ -33,7 +34,10 @@ struct QuestionView: View {
 }
 
 struct QuestionView_Previews: PreviewProvider {
+    
+    @State static var isActivePop = true
+    
     static var previews: some View {
-        QuestionView(question: "What is the most popular sport throughout the world?")
+        QuestionView(question: "What is the most popular sport throughout the world?", isActive: $isActivePop)
     }
 }

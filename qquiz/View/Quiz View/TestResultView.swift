@@ -36,12 +36,39 @@ struct TestResultView: View {
             
             Spacer()
             
-            Text(resultHeading)
-                .font(.title)
+            ZStack {
+                
+                Rectangle()
+                    .fill(Color(red: 220/255, green: 248/255, blue: 255/255))
+                    .frame(height: 80)
+                    .cornerRadius(10)
+                    .shadow(color: Color.gray.opacity(0.3), radius: 5, x: 0, y: 2)
+                
+                Text(resultHeading)
+                    .font(.title)
+                    .bold()
+            }
             
             Spacer()
             
-            Text("You got \(numCorrect) out \(totalQuestion) questions.")
+            VStack(spacing: 25){
+                
+                Text("You got \(numCorrect) out \(totalQuestion) questions")
+                    .font(.title2)
+                
+                HStack {
+                    
+                    Image("coin")
+                    
+                    VStack(spacing: 5){
+                        
+                        Text("Points")
+                        Text(String(numCorrect * 5))
+                            .foregroundColor(Color(red: 0, green: 168/255, blue: 139/255))
+                    }
+                    .font(.system(size: 25))
+                }
+            }
             
             Spacer()
             

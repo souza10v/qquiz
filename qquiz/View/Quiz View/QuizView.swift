@@ -31,7 +31,7 @@ struct QuizView: View {
                 //Text("Question \(currentIndex + 1) of \(maxIndex)")
                 
                 // Progress View
-                ProgressionView(progressionView: Double(progressionView), maxIndex: Double(maxIndex))
+                ProgressionView(progressionView: Double(progressionView), maxIndex: Double(maxIndex), isActive: $isActive)
                 
             }
             .padding()
@@ -39,7 +39,7 @@ struct QuizView: View {
             // Question
             //Text(questions[currentIndex].content)
             //    .padding(.horizontal, 20)
-            QuestionView(question: questions[currentIndex].content)
+            QuestionView(question: questions[currentIndex].content, isActive: $isActive)
                 .padding(.top, -20)
                 .padding()
                 

@@ -11,6 +11,7 @@ struct ProgressionView: View {
     
     var progressionView: Double
     var maxIndex: Double
+    @Binding var isActive: Bool
     
     var body: some View {
         
@@ -18,11 +19,21 @@ struct ProgressionView: View {
             
             Rectangle()
                 .fill(Color.white)
-                .frame(height: 30)
+                .frame(height: 50)
                 .cornerRadius(10)
                 .shadow(color: Color.gray.opacity(0.3), radius: 5, x: 0, y: 2)
             
             HStack{
+                
+                Button {
+                    isActive = false
+                } label: {
+                    Image(systemName: "x.circle")
+                        .foregroundColor(Color(red: 62/255, green: 184/255, blue: 212/255))
+                        .font(.system(size: 30))
+                }
+
+                
                 ProgressView(value: Double(progressionView), total: Double(maxIndex))
                     .progressViewStyle(LinearProgressViewStyle())
                     .tint(Color(red: 62/255, green: 184/255, blue: 212/255))
@@ -40,7 +51,10 @@ struct ProgressionView: View {
 }
 
 struct ProgressionView_Previews: PreviewProvider {
+    
+    @State static var isActivePop = true
+    
     static var previews: some View {
-        ProgressionView(progressionView: 3, maxIndex: 10)
+        ProgressionView(progressionView: 3, maxIndex: 10, isActive: $isActivePop)
     }
 }

@@ -68,10 +68,10 @@
 			isa = PBXGroup;
 			children = (
 				C8AB83452A0934CB00E80EEC /* QuizView.swift */,
-				C837CABD2A142B77002F066B /* ProfileView.swift */,
 				C8AB83492A09A3B800E80EEC /* TestResultView.swift */,
-				C85737172A155B46006511CC /* ProgressionView.swift */,
 				C857371D2A15794B006511CC /* QuestionView.swift */,
+				C837CABD2A142B77002F066B /* ProfileView.swift */,
+				C85737172A155B46006511CC /* ProgressionView.swift */,
 			);
 			path = "Quiz View";
 			sourceTree = "<group>";
