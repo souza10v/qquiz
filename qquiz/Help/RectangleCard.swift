@@ -19,7 +19,6 @@ struct RectangleCard: View {
             .cornerRadius(10)
             .shadow(radius: 5)
             .opacity(0.8)
-        
     }
 }
 

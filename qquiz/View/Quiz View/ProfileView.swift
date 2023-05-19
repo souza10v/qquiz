@@ -20,7 +20,7 @@ struct ProfileView: View {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     
-                    Text("Hello, \(model.userName)")
+                    Text("Hello There, \(model.userName)")
                         .font(.title)
                         .bold()
                     

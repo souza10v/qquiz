@@ -12,11 +12,8 @@ struct qquizApp: App {
     var body: some Scene {
         WindowGroup {
             //HomeView()
-            HomeView()
+            WelcomeView()
                 .environmentObject(ContentModel())
         }
     }
 }
-
-
-//criar a tela que mostra os pontos

@@ -12,8 +12,9 @@ import SwiftUI
 class ContentModel: ObservableObject{
     
     @Published var modules = [Module]()
-    @Published var userName = "User"
+    @Published var userName = ""
     @Published var totalPoints = 20
+    @AppStorage("firstTime") var firstTime: Bool = true
     
     init() {
         
@@ -25,7 +26,7 @@ class ContentModel: ObservableObject{
     func getLocalData() {
         
         // Get a url to the json file
-        let jsonUrl = Bundle.main.url(forResource: "tests1", withExtension: "json")
+        let jsonUrl = Bundle.main.url(forResource: "tests2", withExtension: "json")
         
         do {
             // Read the file into a data object
@@ -49,7 +50,7 @@ class ContentModel: ObservableObject{
     func updateData() {
         
         // Get a url to the json file
-        let jsonUrl = Bundle.main.url(forResource: "tests1", withExtension: "json")
+        let jsonUrl = Bundle.main.url(forResource: "tests2", withExtension: "json")
         
         do {
             

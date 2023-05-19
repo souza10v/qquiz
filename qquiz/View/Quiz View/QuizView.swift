@@ -35,7 +35,7 @@ struct QuizView: View {
                 ProgressionView(progressionView: Double(progressionView), maxIndex: Double(maxIndex), isActive: $isActive)
                 
             }
-            .padding()
+            .padding(.top, -15)
             
             // Question
             //Text(questions[currentIndex].content)
@@ -51,7 +51,7 @@ struct QuizView: View {
                 VStack{
                     
                     ForEach(Array(questions[currentIndex].answers.enumerated()), id: \.offset) {(index, answers) in
-                        
+                    
                         Button {
 
                             selectedAnswerIndex = index
@@ -61,16 +61,17 @@ struct QuizView: View {
                             
                             ZStack {
                                 
+                                // Before submit the answer
+                                // Selecting the answer. Click on button changing from white to gray
                                 if submitted == false {
                                     
                                     RectangleCard(color: index == selectedAnswerIndex ? .gray : .white)
                                 }
                                 
-                                // index == selectedAnswerIndex para entender quando eh clicado
+                                // After submit the answer
+                                // if corrected answer and selected answers are equal to index
+                                else if index == questions[currentIndex].correctIndex && index == selectedAnswerIndex {
                                 
-                                else if index ==  questions[currentIndex].correctIndex && index == selectedAnswerIndex {
-                                    
-                                    
                                         RectangleCard(color: Color(red: 0/255, green: 168/255, blue: 139/255))
                                             .frame(height: 48)
                                     
@@ -80,7 +81,7 @@ struct QuizView: View {
                                     RectangleCard(color: Color.red)
                                         .frame(height: 48)
                                     
-                                } else if index ==  questions[currentIndex].correctIndex {
+                                } else if index == questions[currentIndex].correctIndex {
                                     
                                     RectangleCard(color: Color(red: 0/255, green: 168/255, blue: 139/255))
                                         .frame(height: 48)
@@ -133,7 +134,7 @@ struct QuizView: View {
                         }
                     }
                     
-                    print("submit")
+                    print("submited")
                     model.modules[currentQuestionSelected].test.pointsEarned = numCorrect * Constants.pointsPerQuestion
                     model.updateData()
                     //incrementa pontos
