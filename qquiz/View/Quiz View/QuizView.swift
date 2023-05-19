@@ -134,7 +134,7 @@ struct QuizView: View {
                     }
                     
                     print("submit")
-                    model.modules[currentQuestionSelected].test.pointsEarned = numCorrect * 5
+                    model.modules[currentQuestionSelected].test.pointsEarned = numCorrect * Constants.pointsPerQuestion
                     model.updateData()
                     //incrementa pontos
                 }

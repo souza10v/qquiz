@@ -17,3 +17,6 @@ struct qquizApp: App {
         }
     }
 }
+
+
+//criar a tela que mostra os pontos

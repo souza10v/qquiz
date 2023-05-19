@@ -65,7 +65,7 @@ struct ProfileView: View {
                                 VStack(spacing: 5){
                                     
                                     Text("Points")
-                                    Text("250")
+                                    Text(String(model.totalPoints))
                                         .foregroundColor(Color(red: 0, green: 168/255, blue: 139/255))
                                         .font(.system(size: 20))
                                 }
@@ -87,9 +87,11 @@ struct ProfileView: View {
                                     
                                 }
                             }
-                        }}
+                        }
+                    }
                 }
             }
+            .onAppear(perform: model.gettingTotalPoints)
         }
     }
 }

@@ -63,7 +63,7 @@ struct TestResultView: View {
                     VStack(spacing: 5){
                         
                         Text("Points")
-                        Text(String(numCorrect * 5))
+                        Text(String(numCorrect * Constants.pointsPerQuestion))
                             .foregroundColor(Color(red: 0, green: 168/255, blue: 139/255))
                     }
                     .font(.system(size: 25))

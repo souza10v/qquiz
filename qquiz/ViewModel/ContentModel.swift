@@ -13,10 +13,12 @@ class ContentModel: ObservableObject{
     
     @Published var modules = [Module]()
     @Published var userName = "User"
+    @Published var totalPoints = 20
     
     init() {
         
         getLocalData()
+        gettingTotalPoints()
 
     }
     
@@ -73,6 +75,12 @@ class ContentModel: ObservableObject{
             
             print("Couln`t save into local data \(error)")
         }
+    }
+    
+    func gettingTotalPoints() {
+        
+        self.totalPoints = modules.reduce(into: 0) { $0 + $1.test.pointsEarned}
+        print("loading \(totalPoints) points")
     }
 
 }
