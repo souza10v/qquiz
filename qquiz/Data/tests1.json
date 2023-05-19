@@ -5,6 +5,7 @@
         "id": 0,
         "image": "testSwift",
         "time": "30 minutes",
+        "pointsEarned": 0,
         "description": "Test your knowledge of SwiftUI.",
         "questions": [{
             "id": 0,
@@ -89,6 +90,7 @@
             "id": 0,
             "image": "history",
             "time": "60 minutes",
+            "pointsEarned": 0,
             "description": "Test your knowledge of History.",
             "questions": [
                 {

@@ -12,7 +12,7 @@ struct qquizApp: App {
     var body: some Scene {
         WindowGroup {
             //HomeView()
-            jsonteste()
+            HomeView()
                 .environmentObject(ContentModel())
         }
     }

@@ -35,14 +35,17 @@ struct HomeView: View {
                             .font(.system(size: 18))
                         
                         LazyVGrid(columns: adaptiveColumns) {
-                            // Card Quiz
-                            ForEach(model.modules) { info in
                                 
+                            // Card Quiz
+                            // ForEach(model.modules) { info in
+                               
+                                ForEach(Array((model.modules).enumerated()), id: \.offset) {(index, info) in
+                                    
                                 VStack (spacing: 20){
                                     
                                     NavigationLink(isActive: $isRootActive) {
                                         
-                                        QuizView(isActive: $isRootActive, questions: info.test.questions)
+                                        QuizView(currentQuestionSelected: index, isActive: $isRootActive, questions: info.test.questions)
                                         
                                     } label: {
                                         

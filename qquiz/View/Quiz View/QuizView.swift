@@ -13,6 +13,7 @@ struct QuizView: View {
     @State var selectedAnswerIndex: Int?
     @State var currentIndex = 0
     @State var currentAnswer = 0
+    @State var currentQuestionSelected = 0
     @State var submitted = false
     @State var progressionView = 0
     @State var numCorrect = 0
@@ -132,8 +133,9 @@ struct QuizView: View {
                         }
                     }
                     
-                    
                     print("submit")
+                    model.modules[currentQuestionSelected].test.pointsEarned = numCorrect * 5
+                    model.updateData()
                     //incrementa pontos
                 }
                 
@@ -153,7 +155,7 @@ struct QuizView: View {
                                 .foregroundColor(.white)
                                 .bold()
                         }
-
+                        
                     } else {
                         Text(buttonText)
                             .foregroundColor(.white)
@@ -186,7 +188,7 @@ struct QuizView_Previews: PreviewProvider {
     @State static var isActivePop = false
     
     static var previews: some View {
-        QuizView(isActive: $isActivePop, questions: [
+        QuizView(currentQuestionSelected: 0, isActive: $isActivePop, questions: [
             Question(id: 1, content: "pergunta numero 1", correctIndex: 2, answers: ["aa1","aa2","aa3","aa4"]),
             Question(id: 2, content: "22", correctIndex: 2, answers: ["bb","bb","bb"])]
         )
