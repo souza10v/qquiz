@@ -81,7 +81,7 @@ struct ProfileView: View {
                                 VStack(spacing: 5){
                                     
                                     Text("Tests")
-                                    Text("3")
+                                    Text(String(model.modules.count))
                                         .foregroundColor(Color(red: 0, green: 168/255, blue: 139/255))
                                         .font(.system(size: 20))
                                     

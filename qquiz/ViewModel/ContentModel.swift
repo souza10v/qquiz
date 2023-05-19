@@ -37,7 +37,6 @@ class ContentModel: ObservableObject{
             
             // Assign parsed modules to modules property
             self.modules = modules
-            
         }
         
         catch {
@@ -79,8 +78,8 @@ class ContentModel: ObservableObject{
     
     func gettingTotalPoints() {
         
-        self.totalPoints = modules.reduce(into: 0) { $0 + $1.test.pointsEarned}
-        print("loading \(totalPoints) points")
+        self.totalPoints = modules.reduce(0) { $0 + $1.test.pointsEarned}
+        
     }
 
 }
